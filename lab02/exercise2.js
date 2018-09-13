@@ -1,9 +1,8 @@
 /* CS 336 Keith Vander Linden
- * Exercise 2.1 
- * Person prototype
+ * Exercise 2.2 
+ * Student prototype
  * By: Aaron Santucci
  */
-
 
 // http://jsfiddle.net/codeandcloud/n33RJ/
 function getAge(dateString) {
@@ -16,7 +15,6 @@ function getAge(dateString) {
     }
     return age;
 }
-
 // Person object 'class'
 function Person(name, birthdate)
 {
@@ -24,7 +22,6 @@ function Person(name, birthdate)
 	this.birthdate = birthdate;
 	this.friends = [];
 }
-
 // accessor for a Person's name
 Person.prototype.getName = function() 
 {
@@ -46,19 +43,44 @@ Person.prototype.greeting = function()
 	console.log("Hello, this is " + this.getName() + ", a Person");
 }
 
-// testing
-var Mark = new Person("Mark", "1998/03/31");
-var Alex = new Person("Alex", "1997/08/05");
-Mark.addFriend(Alex);
-Alex.addFriend(Mark);
+/*************************************
+ * Student Object 'Class'
+ *************************************/
+function Student(name, birthdate, subject)
+{
+	Person.call(this, name, birthdate);
+	this.subject = subject;
+}
+Student.prototype = Object.create(Person.prototype);
 
-var Aaron = new Person("Aaron", "1996/05/10");
+// a greeting to identify the Person
+Student.prototype.greeting = function() 
+{
+	console.log("Hello, this is " + this.getName() + ", a Student of " + this.subject);
+}
+
+// testing
+var Aaron = new Student("Aaron", "1996/05/10", "Wumbology");
+
+// Person tests
+var Mark = new Person("Mark", "1998/03/31");
+var Alex = new Student("Alex", "1997/08/05", "Something");
 Aaron.addFriend(Mark);
 Aaron.addFriend(Alex);
-
 console.log("Name: " + Aaron.getName());
 console.log("Age: " + Aaron.getAge());
 console.log("Friends: " + Aaron.friends.length);
+console.log("\n");
 
-
-Aaron.greeting();
+// Student tests
+if (Aaron instanceof Person)
+	if (Aaron instanceof Student)
+		Aaron.greeting();
+if (Mark instanceof Person)
+	if (!(Mark instanceof Student))
+		Mark.greeting();
+if (Alex instanceof Person)
+	if (Alex instanceof Student)
+		Alex.greeting();
+		
+	
