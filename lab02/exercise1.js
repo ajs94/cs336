@@ -1,4 +1,9 @@
-// make sure repository is named cs336
+/* CS 336 Keith Vander Linden
+ * Exercise 2.1 
+ * Person prototype
+ * By: Aaron Santucci
+ */
+
 
 // http://jsfiddle.net/codeandcloud/n33RJ/
 function getAge(dateString) {
@@ -12,6 +17,7 @@ function getAge(dateString) {
     return age;
 }
 
+// Person object 'class'
 function Person(name, birthdate)
 {
 	this.name = name;
@@ -19,26 +25,28 @@ function Person(name, birthdate)
 	this.friends = [];
 }
 
+// accessor for a Person's name
 Person.prototype.getName = function() 
 {
 	return this.name;
 }
-
+// accessor for a Person's age
 Person.prototype.getAge = function() 
 {
 	return getAge(this.birthdate);
 }
-
+// mutator method to add a friend
 Person.prototype.addFriend = function(friend) 
 {
 	this.friends.push(friend);
 }
-
+// a greeting to identify the Person
 Person.prototype.greeting = function() 
 {
 	console.log("Hello, this is " + this.getName());
 }
 
+// testing
 var Mark = new Person("Mark", "1998/03/31");
 var Alex = new Person("Alex", "1997/08/05");
 Mark.addFriend(Alex);
@@ -50,5 +58,7 @@ Aaron.addFriend(Alex);
 
 console.log("Name: " + Aaron.getName());
 console.log("Age: " + Aaron.getAge());
+console.log("Friends: " + Aaron.friends.length);
+
 
 Aaron.greeting();
