@@ -1,0 +1,9 @@
+Aaron Santucci
+
+3.1
+	a. Express is a package framework for Node design around web application principles.
+	b. package.json specifies details about the Express package installed.
+
+3.2
+	a. They're static in that they're 'constant' files on files on the machine.
+	b. The Hello World message continues after because it's still in the code being run at localhost:3000.
