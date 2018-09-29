@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>HTML Page</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+		<div>
+			<h1 id="big-header">CS 336: Lab 04</h1>
+			<p><a href="https://github.com/ajs94?tab=repositories/">ajs94 Github</a></p>
+		</div>
+		<div>
+			<h2 id="big-header">4.1:</h2>
+			
+		</div>
+    </body>
+</html>
+
+body{
+    background-position: left top;
+	background-image: url("dorf.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+div	{
+	background-color: black;
+	width: 1000px;
+    padding: 10px;
+    border: 5px solid indigo;
+    margin: 0;
+}
+h1	{
+	color: Yellow
+}
+p	{
+	color: blue
+}
+h2	{
+	color: teal
+}
+ul	{
+	color: blue
+}
