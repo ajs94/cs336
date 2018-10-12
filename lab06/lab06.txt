@@ -1,0 +1,18 @@
+Aaron Santucci
+ajs94
+CS 336
+
+Successfully used:
+	curl -X POST localhost:3000/request -d '{"arg":"value"}' -H "Content-Type:application/json"
+	curl -X PUT localhost:3000/request -d '{"arg":"value"}' -H "Content-Type:applicatn"n/json
+	curl -X HEAD localhost:3000/request -d '{"arg":"value"}' -H "Content-Type:applicatn"n/json
+	curl -X GET localhost:3000/request -d '{"arg":"value"}' -H "Content-Type:applicatn"n/json
+
+6.1
+a.	There aren't any http methods that curl can't used.
+b.	404 would be a good 'catch all' for undefined paths. Maybe if there was a specific
+		reason, you could use others like 400 Bad Request or 404 Forbidden
+6.2
+a.	Curl can only use get and post methods.
+b.	The server accesses the three peices of data like three items with their json name.
+		ae req.body.user_name
