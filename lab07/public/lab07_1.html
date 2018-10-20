@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>lab07_1</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery <br/> <br/> </a>
+    <button> Click Me! </button>
+    <script src="jquery.js"></script>
+    <script>
+    	$( document ).ready(function() {
+
+			/* a clickable button with jquery
+			 * adds a P html element to the page
+			 */
+			$("button").click(function(event) {
+				var appendedText = document.createElement("P");
+				var onClickText = document.createTextNode("Button clicked");
+				appendedText.appendChild(onClickText);
+				document.body.appendChild(appendedText);
+			});
+			
+			// from the tutorial.. http://learn.jquery.com/about-jquery/how-jquery-works/
+			$( "a" ).click(function( event ) {
+				alert( "The link will no longer take you to jquery.com" );
+				event.preventDefault();
+			});
+    	});
+    </script>
+</body>
+</html>
