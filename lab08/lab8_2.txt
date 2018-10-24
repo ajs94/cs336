@@ -1,0 +1,45 @@
+Aaron Santucci
+CS 336
+Lab 8
+
+    Explain:
+        i.		the component structure of the application. What makes the UI composable and why does this matter?
+					
+					React creates component classes in order to encapsulate aspects of UI. These components can be acted on and retruned
+						making them more modular and flexible.
+						
+        ii.		what JSX does.
+		
+					JSX provides a way to declare React compenents in a way syntactically similar to HTML. 
+					
+        iii.		why ReactJS is safe with respect to XSS.
+		
+					String variables are escaped automatically. 
+					React returns only its recognized components and so HTML code can't be modified by XSS
+					
+        iv.		how the data flows through the components. How are comments loaded? created? saved.
+		
+					React calls to server after a comment is posted take the comments off and store them in the comments.json file.
+					The new comments file is pushed to the server from the server.js script.
+					
+        v.		the nature and purpose of props and state. Which is immutable and which is mutable and why does this distinction matter?
+
+					Props are an immmutable state and are used to pass data to children components.
+					State is mutable with setState() which rerenders the component after running.
+					
+    Consider the following, more detailed questions based on statements in the tutorial.
+        i.		Try editing the comments.json file (to add or remove a legal comment). What happens and why?
+		
+					Adding/removing works fine as long as the syntax is still correct since it only ping the document every couple of seconds
+		
+        ii.		When the CommentBox has loaded comments from the server (in loadCommentsFromServer()), why doesn’t it call render() to make them visible?
+		
+					setState() is called, which automatically rerenders the components.
+		
+        iii.		Of what advantage, if any, is it to require that components always represent the current state of the view?
+        
+					React components should be representative of the current state of the view and so if one is updated the other should be as well.
+		
+	iv.		The app implements optimistic updates. Isn’t optimism here more like foolishness? What if the server rejects the new comment (for whatever reason)?
+		
+					If it rejects a comment and error will be output at every attempt to check and store the comment. This code will then undo that comment. 
