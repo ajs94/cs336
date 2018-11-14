@@ -5,6 +5,26 @@ CS 336
 
 	A. Compare and contrast your development and production deployments and explain how each is designed.
 	
-
+		Production environments is meant to similar to a final product. It's not meant to be updated
+			in real time like how a development environment is.
 
 	B. List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the deployed application files.
+
+		OccurenceOrderPlugin - Webpack gives IDs to identify your modules. With this plugin, Webpack will analyze and prioritize often used 
+			modules assigning them the smallest ids.
+		ExtractTextPlugin - It moves every css requires/imports into a separate css output file (So your styles are no longer inlined into the JavaScript).
+		UglifyJsPlugin - UglifyJS is a JavaScript compressor/minifier.
+
+		All are within the webpack.production.config.js file.
+
+11.2
+
+	A. What advantage is there is deploying an application to a PaaS tool like Heroku?
+	
+		It simplifies creating a web application by removing or lessening consideration on managment and maintaining of the service as well as increasing the
+			long term scalability of a project.
+
+	B. How does Heroku know how to install and run your application (after pulling it from the specified branch on GitHub)?
+
+		We set the code for this project to Node.js so it knows how to interpret it. 
+		It npm installs and builds using the 'scripts' in the package.json and webpack.production.config.js files.
