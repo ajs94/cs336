@@ -1,0 +1,42 @@
+Aaron Santucci
+CS 336
+Lab 13
+
+13.1
+	A. What benefit did using the React Router bring to the application?
+
+		Variables for web attributes (ae api and poll interval) are better encapsulated.
+		Allows easier development of navigatable/multipage websites.
+
+	B. Which is better, hash history or browser history?
+	
+		Browser history seems to be more widely used because it provides full URL of a request
+		Hash history is fine for some things because it's less technical to set up because it isn't set up for different URL routes.
+
+	C. Why does the server (either Webpack Dev Server or the Express server) 
+	have to be modified to support the browser history? Compare this with the hash-based 
+	server demonstrated in class, which didn't require such modifications.
+
+		Browser history needs to be set up to handle URL's that it is intended to provide.
+
+13.2
+	A. What state does the new CommentEdit component maintain and how does that compare with the state maintained by the CommentBox component?
+	
+		CommentEdit first grabs the previous state of a comment before resetting the states for the comment and authors of the same comment ID independently 
+			to the editted version or just deleting the comment.
+		CommmentBox takes the comment input in json format before putting it through and setting the state to mounted.
+
+	B. What does the CommentEdit component do when the AJAX PUT or DELETE methods return successfully? How does this compare with what the 
+	“Cancel” button provided by the CommentEdit component does?
+
+		After the AJAX calls run successfully it sends the page back to the '/' route.
+		The cancel button is also just a link back to the '/' route.
+
+	C. How is the Link added in the last step different from a simple HTML hyperlink?
+	
+		An HTML hyperlink has different syntax ae: <a href="https://www.aLink.com">Text</a>
+		The Link tag we use is a React routing thing used for anchor tag replacement for href that will remain active if the current 
+			route is either the linked route or any descendant of the linked route.
+
+13.3
+	URL:
